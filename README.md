@@ -181,9 +181,10 @@ float new_sum=0;
 float count_elems=0;
 
 for (int i=0; i<arraySize-1;i++){
-if (abs(periods[i]-meanPeriod)<0.05*meanPeriod){
-new_sum += periods[i];
-count_elems++;
+if (abs(periods[i]-meanPeriod)<0.05*meanPeriod) //Αν κάποια τιμή της περιόδου είναι διαφορετική από το +-5% της μέσης τιμής περιόδων 
+{
+new_sum += periods[i];     //τότε κάνε μου νέο άθροισμα
+count_elems++;             // και νέα καταγραφή στοιχείων του πίνακα 
 }
 }
 
@@ -208,7 +209,7 @@ lcd.print("sec");
 }
 
 
-float getDist()
+float getDist()     // Κώδικας για την σωστή λειτουρργία του αισθητήρα απόστασης και μέτρηση σε m
 {
 
   digitalWrite(trigPin1, LOW);
